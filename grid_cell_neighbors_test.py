@@ -95,4 +95,5 @@ class TestGridCellNeighbors(unittest.TestCase):
         self.assertEqual(grid_cell_neighbors.count_neighbors(grid, neighborhood_range), 5)
 
 if __name__ == '__main__':
+    print("Running tests for grid_cell_neighbors module...")
     unittest.main()
