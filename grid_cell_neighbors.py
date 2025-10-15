@@ -15,6 +15,11 @@ def count_neighbors(grid, neighborhood_range):
     
     rows = len(grid)
     cols = len(grid[0]) if rows > 0 else 0
+   
+    # Handle empty grid case
+    if rows == 0 or cols == 0:
+        return 0  
+
     positive_coords = []
 
     # Find all coordinates with positive integers and add to list
@@ -22,12 +27,12 @@ def count_neighbors(grid, neighborhood_range):
         for c in range(cols):
             if grid[r][c] > 0:
                 positive_coords.append((r, c))
+    
+    # Skip processing if neighborhood_range is greater than grid dimensions (no need to check each cell)
+    if neighborhood_range >= rows + cols - 2 and positive_coords:  # A positive cell has to exist as well
+        return rows * cols
 
     neighbor_set = set()
-
-    # Skip processing if neighborhood_range is greater than grid dimensions (no need to check each cell)
-    if neighborhood_range >= rows + cols - 2 and positive_coords: 
-        return rows * cols
 
     # For each positive coordinate, find its neighbors
     for (row, col) in positive_coords:
@@ -40,6 +45,7 @@ def count_neighbors(grid, neighborhood_range):
 
     # Return the size of the Set
     return len(neighbor_set)
+
 
 if __name__ == "__main__":
     # Example usage

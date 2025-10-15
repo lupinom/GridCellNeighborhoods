@@ -93,6 +93,26 @@ class TestGridCellNeighbors(unittest.TestCase):
             [0, 0, -3]
         ]
         self.assertEqual(grid_cell_neighbors.count_neighbors(grid, neighborhood_range), 5)
+    
+    def test_empty_grid(self):
+        neighborhood_range = 4
+        grid = [
+            []
+        ]
+        self.assertEqual(grid_cell_neighbors.count_neighbors(grid, neighborhood_range), 0)
+       
+
+    def test_empty_grid(self):
+        with self.assertRaises(ValueError) as context:
+            neighborhood_range = -1
+            grid = [
+                [0, 1, 0],
+                [0, 4, 0],
+                [6, 0, 2]
+            ]
+            grid_cell_neighbors.count_neighbors(grid, neighborhood_range)
+        self.assertTrue("Neighborhood range must be non-negative" in str(context.exception))
+
 
 if __name__ == '__main__':
     print("Running tests for grid_cell_neighbors module...")
