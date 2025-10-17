@@ -9,16 +9,9 @@ within a specified Manhattan distance from cells containing positive integers.
 :return: integer count of unique neighboring cells within neighborhood_range of any positive integer cell
 '''
 def count_neighbors(grid, neighborhood_range):
-    # Check for valid neighborhood_range
-    if neighborhood_range < 0:
-        raise ValueError("Neighborhood range must be non-negative")
     
     rows = len(grid)
-    cols = len(grid[0]) if rows > 0 else 0
-   
-    # Handle empty grid case
-    if rows == 0 or cols == 0:
-        return 0  
+    cols = len(grid[0])
 
     positive_coords = []
 
