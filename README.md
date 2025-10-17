@@ -22,3 +22,5 @@ The steps for implementation are as follows:
 4) Return the length of the `set`
 
 I did choose to not add validations for basic things that were handled by the assumptions, which I hope is fine. I originally wrote code to return a `ValueError` exception if there was a negative Neighborhood range, for example.
+
+Tested on **Python 3.11.9**.
