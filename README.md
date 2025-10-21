@@ -1,5 +1,5 @@
 # GridCellNeighborhoods
-### Solution to the Counting Grid Cell Neighborhoods problem.
+### Solution to the Counting Grid Cell Neighborhoods problem. (see .pdf in repo for details)
 
 ## My Initial Thoughts
 
